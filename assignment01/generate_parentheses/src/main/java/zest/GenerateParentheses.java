@@ -6,8 +6,11 @@ import java.util.List;
 public class GenerateParentheses {
 
     public static List<String> generateParentheses(int n) {
+        if (n > 8) {
+            throw new IllegalArgumentException("Input must be below 9");
+        }
         List<String> combinations = new ArrayList();
-        if (n<=0) return combinations;
+        //if (n<=0) return combinations;
         generateAll(new char[2 * n], 0, combinations);
         return combinations;
     }
