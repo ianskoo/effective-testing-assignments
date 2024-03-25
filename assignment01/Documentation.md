@@ -67,9 +67,71 @@ I can't see additional meaningful specification tests.
 
 <!-- Use Jacoco. Describe which conditions, branches, or lines did you miss with specification-based testing (if any), and what tests did you add to cover them -->
 
+In PalindromeOne, we missed one condition in the following `if` statement:
+```
+while (start < end) {
+    if (numbers[start] != numbers[end]) return false;
+    start++;
+    end--;
+``` 
 
+We added the following parameters for the parameterized test to reach 100% coverage:
+```
+of(1231, false)
+```
+
+In PalindromeTwo, we missed one of four branches in both:
+```
+if (x < 100 && x % 11 == 0) return true;
+if (x < 1000 && ((x / 100) * 10 + x % 10) % 11 == 0) return true;
+```
+and one out of two in:
+```
+if (v > x) {
+    v /= 10;
+}
+```
+
+To address this, we added the following parameters for the parameterized test:
+```
+of(11, true),
+of(12, false),
+of(242, true),
+of(363, true)
+```
+
+We couldn't find a value to make condition `if (v > x)` evaluate to false.
 
 ### Mutation testing
+
+Results of PItest mutation testing:
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Line Coverage</th>
+            <th>Mutation Coverage</th>
+            <th>Test Strength</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="./PalindromeOne.java.html">PalindromeOne.java</a></td>
+            <td><div class="coverage_percentage">91% </div><div class="coverage_bar"><div class="coverage_complete width-91"></div><div class="coverage_legend">10/11</div></div></td>
+            <td><div class="coverage_percentage">93% </div><div class="coverage_bar"><div class="coverage_complete width-93"></div><div class="coverage_legend">13/14</div></div></td>
+            <td><div class="coverage_percentage">93% </div><div class="coverage_bar"><div class="coverage_complete width-93"></div><div class="coverage_legend">13/14</div></div></td>
+        </tr>
+        <tr>
+            <td><a href="./PalindromeTwo.java.html">PalindromeTwo.java</a></td>
+            <td><div class="coverage_percentage">93% </div><div class="coverage_bar"><div class="coverage_complete width-93"></div><div class="coverage_legend">14/15</div></div></td>
+            <td><div class="coverage_percentage">60% </div><div class="coverage_bar"><div class="coverage_complete width-60"></div><div class="coverage_legend">24/40</div></div></td>
+            <td><div class="coverage_percentage">60% </div><div class="coverage_bar"><div class="coverage_complete width-60"></div><div class="coverage_legend">24/40</div></div></td>
+        </tr>
+     </tbody>
+</table>
+
+With palindrome1 having 93\% coverage, and palindrome2 only 60\%. This is due to the latter having a way more complex code, with many more conditions that can break after a mutation. This means that palindrome2 actually has a lot more possible partitions from a structural point of view than palindrome1. Considering that we would not have implemented the palindrome function like in palindrome2, as we deem it hard to understand and very bug prone (bugs love boundaries), we decided not to come up with many additional partitions for it.
 
 
 ### Bugs found
@@ -80,9 +142,53 @@ Both PalindromeOne and Two were happy to return a result (false) by passing inte
 
 
 
-### ChatGPT prompts
+
+### LLM prompts
+
+For palindrome, we refrained from asking testing-related questions to an LLM. The only questions asked were about the configuration of Maven, which gave as a lot of trouble: 
 
 * What's the simplest way to do automated testing with junit5 on linux?
 * syntax for parametrized test junit5
 * Unrecognised tag: 'dependency'
 * How do I add jacoco to the pom.xml
+* How do I make sure jacoco runs with `mvn test`? It is not producing a report. this is my pom.xml: [...]
+
+
+
+## ATOI
+
+### Specification testing
+
+#### 1. Understanding the requirements
+
+
+#### 2. Exploring the program 
+
+
+#### 3. Analyze properties of inputs and outputs and find partitions
+
+
+
+| partition | expected output |
+| --- | --- |
+
+
+
+#### 4. Analyze the boundaries
+
+| partition | on-point | off-point |
+| --- | --- | --- | 
+
+
+#### 5. Devise test cases
+
+
+#### 6. Implement the automated test cases
+
+
+#### 7. Use creativity and experience to enhance the test suite
+
+
+### Structural testing
+
+### Mutation testing

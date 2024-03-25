@@ -4,20 +4,20 @@
 
     public static boolean isPalindrome(int x) {
         // Fix: Check legal int range:
-<span class="nc bnc" id="L7" title="All 4 branches missed.">        if (x &lt; Math.round(-Math.pow(2, 20)) || x &gt; Math.round(Math.pow(2, 20) - 1)) {</span>
-<span class="nc" id="L8">            throw new IllegalArgumentException(&quot;x must be between -2^(20) and 2^(20)-1&quot;);</span>
+<span class="fc bfc" id="L7" title="All 4 branches covered.">        if (x &lt; Math.round(-Math.pow(2, 20)) || x &gt; Math.round(Math.pow(2, 20) - 1)) {</span>
+<span class="fc" id="L8">            throw new IllegalArgumentException(&quot;x must be between -2^(20) and 2^(20)-1&quot;);</span>
         }
 
         // convert input into an array and rest is nothing but a simple two pointer solution
-<span class="nc" id="L12">        char[] numbers = String.valueOf(x).toCharArray();</span>
-<span class="nc" id="L13">        int start = 0;</span>
-<span class="nc" id="L14">        int end = numbers.length - 1;</span>
-<span class="nc bnc" id="L15" title="All 2 branches missed.">        while (start &lt; end) {</span>
-<span class="nc bnc" id="L16" title="All 2 branches missed.">            if (numbers[start] != numbers[end]) return false;</span>
-<span class="nc" id="L17">            start++;</span>
-<span class="nc" id="L18">            end--;</span>
+<span class="fc" id="L12">        char[] numbers = String.valueOf(x).toCharArray();</span>
+<span class="fc" id="L13">        int start = 0;</span>
+<span class="fc" id="L14">        int end = numbers.length - 1;</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        while (start &lt; end) {</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">            if (numbers[start] != numbers[end]) return false;</span>
+<span class="fc" id="L17">            start++;</span>
+<span class="fc" id="L18">            end--;</span>
         }
-<span class="nc" id="L20">        return true;</span>
+<span class="fc" id="L20">        return true;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

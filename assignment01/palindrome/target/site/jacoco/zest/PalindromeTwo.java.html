@@ -7,25 +7,25 @@
 
     public static boolean isPalindrome(int x) {
         // Fix: Check legal int range:
-<span class="nc bnc" id="L10" title="All 4 branches missed.">        if (x &lt; Math.round(-Math.pow(2, 20)) || x &gt; Math.round(Math.pow(2, 20) - 1)) {</span>
-<span class="nc" id="L11">            throw new IllegalArgumentException(&quot;x must be between -2^(20) and 2^(20)-1&quot;);</span>
+<span class="fc bfc" id="L10" title="All 4 branches covered.">        if (x &lt; Math.round(-Math.pow(2, 20)) || x &gt; Math.round(Math.pow(2, 20) - 1)) {</span>
+<span class="fc" id="L11">            throw new IllegalArgumentException(&quot;x must be between -2^(20) and 2^(20)-1&quot;);</span>
         }
 
-<span class="nc bnc" id="L14" title="All 2 branches missed.">        if (x &lt; 0) return false;</span>
-<span class="nc bnc" id="L15" title="All 2 branches missed.">        if (x % 10 == 0) return false;</span>
-<span class="nc bnc" id="L16" title="All 4 branches missed.">        if (x &lt; 100 &amp;&amp; x % 11 == 0) return true;</span>
-<span class="nc bnc" id="L17" title="All 4 branches missed.">        if (x &lt; 1000 &amp;&amp; ((x / 100) * 10 + x % 10) % 11 == 0) return true;</span>
+<span class="fc bfc" id="L14" title="All 2 branches covered.">        if (x &lt; 0) return false;</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        if (x % 10 == 0) return false;</span>
+<span class="fc bfc" id="L16" title="All 4 branches covered.">        if (x &lt; 100 &amp;&amp; x % 11 == 0) return true;</span>
+<span class="fc bfc" id="L17" title="All 4 branches covered.">        if (x &lt; 1000 &amp;&amp; ((x / 100) * 10 + x % 10) % 11 == 0) return true;</span>
 
-<span class="nc" id="L19">        v = x % 10;</span>
-<span class="nc" id="L20">        x = x / 10;</span>
-<span class="nc bnc" id="L21" title="All 2 branches missed.">        while (x - v &gt; 0) {</span>
-<span class="nc" id="L22">            v = v * 10 + x % 10;</span>
-<span class="nc" id="L23">            x /= 10;</span>
+<span class="fc" id="L19">        v = x % 10;</span>
+<span class="fc" id="L20">        x = x / 10;</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        while (x - v &gt; 0) {</span>
+<span class="fc" id="L22">            v = v * 10 + x % 10;</span>
+<span class="fc" id="L23">            x /= 10;</span>
         }
-<span class="nc bnc" id="L25" title="All 2 branches missed.">        if (v &gt; x) {</span>
-<span class="nc" id="L26">            v /= 10;</span>
+<span class="pc bpc" id="L25" title="1 of 2 branches missed.">        if (v &gt; x) {</span>
+<span class="fc" id="L26">            v /= 10;</span>
         }
-<span class="nc bnc" id="L28" title="All 2 branches missed.">        return v == x;</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        return v == x;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
