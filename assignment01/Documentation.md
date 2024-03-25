@@ -128,7 +128,7 @@ Therefore I created a helper function to calculate the catalan number.
 In a second step i create a test suite that runs throug inputs 1-8 and then checks if the size is equal to the calculated catalan number.
 ### Structural testing
 THe only line which is not covered is the first line which should not be a problem as it is the class initialization 
-![img.png](img.png)
+![img.png](img.png) (can be seen in the generate_parentheses folder)
 Becuase all important lines were covered i did not have to add any new tests
 ### Mutation testing
 All mutant were killed by my tests
