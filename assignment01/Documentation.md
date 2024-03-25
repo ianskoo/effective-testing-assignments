@@ -209,3 +209,76 @@ All mutant were killed by my tests
 -Various Prompts were used to be able to install jacoco and pitest correctly
 
 
+
+
+
+Needle in Hay
+
+
+
+Inputs:
+haystack - String
+needle - String
+output:
+-1, 0 <= x < haystack.length
+
+partitions:
+haystack:
+empty
+null
+any String
+needle:
+empty
+null
+any String
+cases:
+H - Null, N - any String -> -1
+H - any String, N - null -> -1
+H - Null, N - Null -> -1
+H - empty, N - empty -> 0
+H - empty, N - Any string -> -1
+H - any String, N - empty -> -1
+H - any String containing N, N - any String -> 0 <= x < H.length
+H - any String not containing N, N - any String -> -1
+
+identified bugs:
+if the needle is an empty string and the haystack any string, there was an index out of bounds error. A simple fix for that was to add an if clause to check if the needle is empty - and if so then return -1
+
+
+
+
+
+Median of Arrays
+
+
+Inputs:
+num1 - Int[]
+num2 - Int[]
+output: Int
+
+partitions:
+num1:
+empty
+null
+any array with size >=1
+sorted in ascending
+not sorted
+num2:
+empty
+null
+any array with size >=1
+sorted in ascending
+not sorted
+cases:
+n1 or n2 null -> 0
+n1.length + n2.length %2 == 0 -> avg of 2 middle elements
+n1.length + n2.length %2 == 1 -> middle element
+n1 or n2 not sorted in ascending order -> 0
+test cases:
+n1 null n2 null
+n1 null n2 any
+n1 any n2 null
+identified bugs:
+the code does not reset variables p1 and p2. this is fixed easily by setting both variables to 0 everytime the method is called
+
+
