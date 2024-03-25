@@ -6,6 +6,10 @@ public class PalindromeTwo {
     static int v;
 
     public static boolean isPalindrome(int x) {
+        // Fix: Check legal int range:
+        if (x < Math.round(-Math.pow(2, 20)) || x > Math.round(Math.pow(2, 20) - 1)) {
+            throw new IllegalArgumentException("x must be between -2^(20) and 2^(20)-1");
+        }
 
         if (x < 0) return false;
         if (x % 10 == 0) return false;

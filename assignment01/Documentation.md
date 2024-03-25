@@ -28,44 +28,61 @@ From the requirements and the only input's type (int), we can at least find the 
 | $x = 0$ | `true` |
 | $x = 1$ | `true` | 
 | $x = 121$ | `true` | 
+| $x = 123$ | `false` | 
 | $x = -1$ | `false` | 
 | $x = -121$ | `false` | 
 | $x \notin [-2^{20}, 2^{20}-1]$ | `null` | 
 | $x = -2^{20}-1$ | `null` | 
 | $x = 2^{20}$ | `null` | 
 
+On the other hand, finding all partitions of this function that make the return value change seems hard, as the numbers that return true are specific and sparse. It's also not clear to me whether they might follow some closed mathematical formula or not.
+
 
 #### 4. Analyze the boundaries
 
-Finding all the boundaries of this function seems hard, as the numbers that return true are specific and sparse. It's also not clear to me whether they might follow some closed mathematical formula or not.
+Some on- and off-points are already in the shortlist created to test the partitions. We take partition $x \in [0,9]$ as example of positive numbers going from palindrome to non-palindrome.
 
-| partition | on-points | off-points |
+| partition | on-point | off-point |
 | --- | --- | --- | 
-| $x \in [-2^{20}, 2^{20}-1]$ | 
-| $x \notin [-2^{20}, 2^{20}-1]$ | $-2^{20}, 2^{20}-1$ | $-2^{20}-1, 2^{20}$
-| $x$ is `null`: |
-| $x < 0$ |
-| $x \in [0,9]$ | 
+| $x \geq -2^{20}$ | $-2^{20}$ | $-2^{20}-1$ |
+| $x \leq 2^{20}-1$ | $2^{20}-1$ | $2^{20}$ |
+| $x < 0$ | -1 | 0 |
+| $x \in [0,9]$ | 9 | 10 |
 
 
 #### 5. Devise test cases
 
+As the function only has one input, we don't have to combine the partitions. We will thus devise a parametrized test with all of the above on- and off-points and exceptional values (int, not int, null) once.
 
 #### 6. Implement the automated test cases
 
+See implementation.
 
 #### 7. Use creativity and experience to enhance the test suite
 
+I can't see additional meaningful specification tests. 
+
 
 ### Structural testing
+
+<!-- Use Jacoco. Describe which conditions, branches, or lines did you miss with specification-based testing (if any), and what tests did you add to cover them -->
 
 
 
 ### Mutation testing
 
 
+### Bugs found
+
+#### Specification testing
+
+Both PalindromeOne and Two were happy to return a result (false) by passing integers outside the specified range $x \in [-2^{20}, 2^{20}-1]$. They now throw an IllegalArgumentException. 
 
 
-## ChatGPT prompts
+
+### ChatGPT prompts
 
 * What's the simplest way to do automated testing with junit5 on linux?
+* syntax for parametrized test junit5
+* Unrecognised tag: 'dependency'
+* How do I add jacoco to the pom.xml
