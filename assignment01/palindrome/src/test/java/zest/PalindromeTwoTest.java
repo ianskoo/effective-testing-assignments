@@ -43,7 +43,14 @@ public class PalindromeTwoTest {
             of(-1, false),
             of(-1, false),
             of(9, true),
-            of(10, false)
+            of(10, false),
+
+            // Structural testing additions
+            of(11, true),
+            of(12, false),
+            of(242, true),
+            of(363, true),
+            of(4321, false)
         );
     }
     
