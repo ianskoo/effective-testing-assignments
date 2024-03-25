@@ -26,6 +26,7 @@ class MedianOfArrays {
 
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        p1 = 0; p2 = 0;
         if (nums1==null || nums2==null) return 0;
         if (!isArraySortedAscending(nums1) || !isArraySortedAscending(nums2)) return 0;
         int m = nums1.length, n = nums2.length;

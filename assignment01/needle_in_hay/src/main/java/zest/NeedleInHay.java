@@ -4,6 +4,7 @@ class NeedleInHay {
     public static int find(String haystack, String needle) {
         if (haystack == null || needle == null) return -1;
         if (haystack.isEmpty() && needle.isEmpty()) return 0;
+        if (needle.isEmpty()) return -1;
         int lenHay = haystack.length(), lenNed = needle.length();
 
         for(int i = 0; i < (lenHay-lenNed + 1); i++)
