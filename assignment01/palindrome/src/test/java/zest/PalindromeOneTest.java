@@ -43,7 +43,8 @@ public class PalindromeOneTest {
             of(-1, false),
             of(-1, false),
             of(9, true),
-            of(10, false)
+            of(10, false),
+            of(1231, false)
         );
     }
     
