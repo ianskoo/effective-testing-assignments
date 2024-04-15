@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ClimbingStairs.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">climbing-stairs</a> &gt; <a href="index.source.html" class="el_package">zest</a> &gt; <span class="el_source">ClimbingStairs.java</span></div><h1>ClimbingStairs.java</h1><pre class="source lang-java linenums">package zest;
+
+<span class="fc" id="L3">public class ClimbingStairs {</span>
+    public int climbStairs(int n) {
+        // pre condition
+<span class="fc bfc" id="L6" title="All 2 branches covered.">        assert n &gt; 0 : &quot;n must be positive&quot;;</span>
+<span class="fc bfc" id="L7" title="All 2 branches covered.">        if (n &lt;= 2) {</span>
+<span class="fc" id="L8">            return n;</span>
+        }
+<span class="fc" id="L10">        int oneStepBefore = 2;</span>
+<span class="fc" id="L11">        int twoStepsBefore = 1;</span>
+<span class="fc" id="L12">        int allWays = 0;</span>
+
+<span class="fc bfc" id="L14" title="All 2 branches covered.">        for (int i = 2; i &lt; n; i++) {</span>
+<span class="fc" id="L15">            allWays = oneStepBefore + twoStepsBefore;</span>
+<span class="fc" id="L16">            twoStepsBefore = oneStepBefore;</span>
+<span class="fc" id="L17">            oneStepBefore = allWays;</span>
+            // invariant
+<span class="pc bpc" id="L19" title="1 of 2 branches missed.">            assert invariant(oneStepBefore, twoStepsBefore) : &quot;Invariant does not hold&quot;;</span>
+        }
+        // post condition
+<span class="pc bpc" id="L22" title="1 of 2 branches missed.">        assert allWays &gt;= 0 : &quot;number of ways must be positive&quot;;</span>
+<span class="fc" id="L23">        return allWays;</span>
+    }
+
+    private boolean invariant(int oneStepBefore, int twoStepsBefore) {
+<span class="pc bpc" id="L27" title="2 of 4 branches missed.">        return oneStepBefore &gt;= 0 &amp;&amp; twoStepsBefore &gt;= 0;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
