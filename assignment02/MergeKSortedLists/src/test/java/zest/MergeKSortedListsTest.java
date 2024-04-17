@@ -17,8 +17,18 @@ import java.util.stream.Stream;
 public class MergeKSortedListsTest {
 
     @Test
-    public void exceptionalValsTest(){
-        ListNode[] listNodes = new ListNode[2];
+    public void emptyArrayTest(){
+        assertEquals(new ListNode[0], new ListNode[0]);
+    }
+
+    @Test
+    public void nullTest(){
+        assertEquals(null, null);
+    }
+
+    @Test
+    public void nodeCountLowerBoundaryTest(){
+        ListNode[] listNodes = new ListNode[1];
 
         int N = (int) Math.pow(10, 4) + 1;  // Example: Number of nodes
         int M = 3;  // Example: Value to be repeated
@@ -39,7 +49,7 @@ public class MergeKSortedListsTest {
         //     IllegalArgumentException.class, 
         //     () -> merger.mergeKLists(listNodes)
         // );
-        // ListNode resultNode = merger.mergeKLists(listNodes);
+        ListNode resultNode = merger.mergeKLists(listNodes);
         
         System.out.println(resultNode.val);
         assertEquals(new ListNode[0], resultNode);
