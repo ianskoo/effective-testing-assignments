@@ -5,7 +5,7 @@
 
 ### Understanding the requirements
 
-Given a list of linked lists containing integers in range [-10^4, 10^4], return a single sorted linked list. The total number of nodes of all linked lists cannot exceed 10^4.
+Given a list of **sorted** linked lists containing integers in range [-10^4, 10^4], return a single sorted linked list. The total number of nodes of all linked lists cannot exceed 10^4.
 
 ### Analyze properties of inputs and outputs and find partitions
 
@@ -23,11 +23,11 @@ class ListNode {
 
 | partition | expected output |
 | --- | --- |
-| empty array | empty array |
+| empty array | empty array or null |
 | null | null |
 | # nodes <= 10^4, values $\in [-10^4, 10^4]$ | merged sorted linked list |
-| # nodes > 10^4 | error or null |
-| some value $\notin [-10^4, 10^4]$ | error or null |
+| # nodes > 10^4 | exception |
+| some value $\notin [-10^4, 10^4]$ | exception |
 
 
 ### Analyze the boundaries
@@ -37,6 +37,7 @@ class ListNode {
 | # nodes <= 10^4, values $\in [-10^4, 10^4]$ | 10^4 | 10^4 + 1 |
 | some value $\notin [-10^4, 10^4]$ | -10^4 - 1 | 10^4 + 1 |
 
+
 ### Devise test cases
 
 No combinations of partitions needed, as there only is one input.
@@ -45,27 +46,73 @@ No combinations of partitions needed, as there only is one input.
 |--|--|
 | [] | [] |
 | null | null |
-| [[1, 2, 3], \[2\]] | [1, 2, 2, 3] |
+| [[-1, 2, 3], \[2], \[0]] | [-1, 0, 2, 2, 3] |
 | [\[3\] * 10^4+1]] | error |
 | [[10^4 + 1]] | error |
 | [[-10^4 - 1]] | error |
 
 
-## Code Coverage
-
-<!-- Use Jacoco. Describe which conditions, branches, or lines did you miss with specification-based testing (if any), and what tests did you add to cover them -->
-
-
 ### Bugs found
 
-1. The program does not check the required constraints. Given a linked list with 10^4+1 nodes, it returns a non-empty merged list.
+1. The program did not check the required constraints. Given a linked list with 10^4+1 nodes, it would return a non-empty merged list.
+2. The program also did not check the accepted integer value range ([-10^4, 10^4]).
 
 
-### Specification testing
+## Task 1: Code Coverage
+<!-- In this task, you are required to achieve the highest possible (ideally, 100\%) line coverage. for the provided Java solutions. Utilize the [JaCoCo] plugin to analyze and generate coverage reports.  -->
 
-Both PalindromeOne and Two were happy to return a result (false) by passing integers outside the specified range $x \in [-2^{20}, 2^{20}-1]$. They now throw an IllegalArgumentException. 
+With just the specification tests described above, we reached 100% line coverage and 94% branch coverage (not required):
+
+![Line and branch coverage](./assets/line&branchcoverage.png)
+
+## Task 2: Designing Contracts
+<!-- - For the provided Java solutions, design and document contracts including pre-conditions, post-conditions, and invariants.
+- Implement the contracts in Java solution code and write tests to verify that the contracts are enforced at runtime. Define appropriate pre-conditions, post-conditions, and invariants for each provided Java solution. Incorporate the designed contracts into the source codes. For invariants, ensure they are checked at the start and end of each public method or after any state-changing operation. -->
 
 
+From the specifications we can formulate the following contract.
+
+### Pre-conditions
+
+1. The linked lists of the input array must be sorted in ascending order
+2. The total number of nodes of the input linked lists must not exceed 10^4
+3. The values in the linked lists must be in the range [-10^4, 10^4]
+
+### Post-conditions
+
+1. The output linked list must be sorted in ascending order
+2. The output linked list must have the same number of nodes as the input linked lists
+
+### Invariants
+
+We could not think of an invariant. MergeKSortedLists is functional in practice, so there is no state that has to hold some properties before and after calling it. 
+
+We could potentially define the fact that any linked lists (input and output) existing in MergeKSortedLists() must be sorted in ascending order, but since this does not refer to any particular attribute or parameter, we prefered to keep it specific to the input and output, thus in the pre- and post-conditions.
+
+
+## Task 3: Testing Contracts
+<!-- Develop a suite of JUnit tests specifically aimed at verifying that the contracts are correctly enforced. This should include tests that:
+- Validate normal operation when pre-conditions are met.
+- Confirm that appropriate exceptions or errors are thrown when pre-conditions are violated.
+- Ensure post-conditions hold after the execution of functions under various conditions.
+- Verify that invariants are maintained throughout the software module's lifecycle, especially after state changes. -->
+
+### Tests for pre-conditions
+
+1. `unSortedInputTest()`: The linked lists of the input array must be sorted in ascending order
+2. `nodeCountOverUpperBoundaryTest()`: The total number of nodes of the input linked lists must not exceed 10^4
+3. `nodeValueOverUpperBoundaryTest()`, `nodeValueUnderLowerBoundaryTest()`: The values in the linked lists must be in the range [-10^4, 10^4]
+
+### Tests for post-conditions
+
+The valid example in `validInputTest()` tests the post-conditions in one scenario. The property-based testing that follows tests them more thoroughly.
+
+
+## Task 4: Property-Based Testing
+<!-- - Use **property-based testing** techniques to derive tests for the provided Java solutions.
+- Identify properties that should hold true for any inputs and document your rationale.
+- Use a property-based testing framework to automate the testing process. 
+- hint: Add jqwik framework to Your pom.xml -->
 
 
 ## LLM prompts
