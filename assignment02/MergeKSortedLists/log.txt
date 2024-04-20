@@ -1,0 +1,37 @@
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running zest.MergeKSortedListsTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s - in zest.MergeKSortedListsTest
+[INFO] Running MergeKSortedListsTest
+Apr 20, 2024 7:36:47 PM net.jqwik.engine.properties.RandomizedShrinkablesGenerator logEdgeCasesOutnumberTriesIfApplicable
+INFO: Edge case generation exceeds number of tries. Stopped after 1000 generated cases.
+timestamp = 2024-04-20T19:36:47.444447, MergeKSortedListsTest:validInputValidOutputTest = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 1000       | # of all combined edge cases
+edge-cases#tried = 163        | # of edge cases tried in current run
+seed = 1007081994115324793    | random seed to reproduce generated values
+
+
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.561 s - in MergeKSortedListsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.7:report (report) @ MergeKSortedListsTest ---
+[INFO] Loading execution data file /home/chris/github/assignments/assignment02/MergeKSortedLists/target/jacoco.exec
+[INFO] Analyzed bundle 'MergeKSortedListsTest' with 2 classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.079 s
+[INFO] Finished at: 2024-04-20T19:36:47+02:00
+[INFO] ------------------------------------------------------------------------
