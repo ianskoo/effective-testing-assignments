@@ -2,9 +2,13 @@ package zest;
 
 public class UniquePaths {
     public int uniquePaths(int m, int n) {
+        // Pre-condition
+        assert (m >= 1 && m <= 100) : "Pre-condition violated: m is out of the range [1,100]";
+        assert (n >= 1 && m <= 100) : "Pre-condition violated: n is out of the range [1,100]";
         int[][] dp = new int[m][n];
 
-        // Initialize the first row and column to 1 since there's only one way to reach any cell in the first row or column
+        // Initialize the first row and column to 1 since there's only one way to reach
+        // any cell in the first row or column
         for (int i = 0; i < m; i++) {
             dp[i][0] = 1;
         }
@@ -15,10 +19,16 @@ public class UniquePaths {
         // Fill the DP table
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
-                dp[i][j] = dp[i - 1][j] + dp[i][j - 1]; // The number of paths to the current cell is the sum of the paths to the cell above and to the left
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1]; // The number of paths to the current cell is the sum of the
+                                                        // paths to the cell above and to the left
+                // Invariant
+                assert (dp[i][j] == dp[i - 1][j] + dp[i][j - 1]) : "Invariant violated: value at cell (" + i + "," + j
+                        + ") does not represent number of unqiue paths";
             }
         }
 
+        // Post-condition
+        assert (dp[m - 1][n - 1] > 0) : "Post-condition violated: final value " + dp[m - 1][n - 1] + " is negative";
         return dp[m - 1][n - 1]; // The bottom-right cell contains the total number of unique paths
     }
 }
