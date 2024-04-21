@@ -1,6 +1,64 @@
 // mvn test
 
-[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.203 s - in zest.SumOfTwoIntegersTest
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running zest.SumOfTwoIntegersTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 s - in zest.SumOfTwoIntegersTest
+[INFO] Running zest.SumOfTwoIntegersTest
+timestamp = 2024-04-21T15:15:12.599469, SumOfTwoIntegersTest:commutativity = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 81         | # of all combined edge cases
+edge-cases#tried = 71         | # of edge cases tried in current run
+seed = 4310627172840536395    | random seed to reproduce generated values
+
+
+timestamp = 2024-04-21T15:15:12.613264, SumOfTwoIntegersTest:identity = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 9          | # of all combined edge cases
+edge-cases#tried = 9          | # of edge cases tried in current run
+seed = -2992464692768940023   | random seed to reproduce generated values
+
+
+timestamp = 2024-04-21T15:15:12.624969, SumOfTwoIntegersTest:negation = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 9          | # of all combined edge cases
+edge-cases#tried = 9          | # of edge cases tried in current run
+seed = 5522712712898223347    | random seed to reproduce generated values
+
+
+timestamp = 2024-04-21T15:15:12.642868, SumOfTwoIntegersTest:associativity = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 729        | # of all combined edge cases
+edge-cases#tried = 161        | # of edge cases tried in current run
+seed = -5098660063614343317   | random seed to reproduce generated values
+
+
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.194 s - in zest.SumOfTwoIntegersTest
 [INFO] 
 [INFO] Results:
 [INFO] 
@@ -13,6 +71,6 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.326 s
-[INFO] Finished at: 2024-04-19T12:07:34+02:00
+[INFO] Total time:  1.312 s
+[INFO] Finished at: 2024-04-21T15:15:12+02:00
 [INFO] ------------------------------------------------------------------------
