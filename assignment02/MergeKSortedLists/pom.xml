@@ -38,6 +38,14 @@
             <version>5.9.1</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Jqwik for property-based testing -->
+        <dependency>
+            <groupId>net.jqwik</groupId>
+            <artifactId>jqwik</artifactId>
+            <version>1.8.4</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
