@@ -66,11 +66,3 @@ seed = -5098660063614343317   | random seed to reproduce generated values
 [INFO] 
 [INFO] 
 [INFO] --- jacoco-maven-plugin:0.8.10:report (report) @ sum-of-two-integers ---
-[INFO] Loading execution data file /Users/naseemhassan/Desktop/EST_assignments/effective-testing-assignments/assignment02/SumofTwoIntegers/target/jacoco.exec
-[INFO] Analyzed bundle 'sum-of-two-integers' with 1 classes
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.312 s
-[INFO] Finished at: 2024-04-21T15:15:12+02:00
-[INFO] ------------------------------------------------------------------------
