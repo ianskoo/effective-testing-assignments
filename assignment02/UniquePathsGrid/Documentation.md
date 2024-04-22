@@ -21,4 +21,4 @@ One property which should always hold for this problem is that the result should
 
 Another property which must hold is consistency. This means that the results for the same input values m and n should not change. See the testConsistency Property test.
 
-To ensure that property testing works, we limited the input range by using @Provide with arbitrary integers in the range [1, 100]. Since we already changed the type of dp and the returned value to BigInteger, the property tests passed without failing. Without changing the types, the tests would have violated the post-condition.
+To ensure that property testing works, we limited the input range by using @Provide with arbitrary integers in the range [1, 100]. Since we already changed the type of dp and the returned value to BigInteger, the property tests passed without failing. Without changing the types, the tests would have violated the post-condition and we would have come to the same conclusion as in task 3.
