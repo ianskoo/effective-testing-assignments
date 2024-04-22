@@ -1,8 +1,8 @@
 package zest;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
+import java.math.BigInteger;
 import net.jqwik.api.*;
 
 class UniquePathsTest {
@@ -10,29 +10,30 @@ class UniquePathsTest {
 
     @Test
     void testExample1() {
-        assertEquals(28, up.uniquePaths(3, 7));
+        assertEquals(BigInteger.valueOf(28), up.uniquePaths(3, 7));
     }
 
     @Test
     void testExample2() {
-        assertEquals(3, up.uniquePaths(2, 3));
+        assertEquals(BigInteger.valueOf(3), up.uniquePaths(2, 3));
     }
 
     @Test
     void testExample3() {
-        assertEquals(6, up.uniquePaths(3, 3));
+        assertEquals(BigInteger.valueOf(6), up.uniquePaths(3, 3));
     }
 
     @Test
     void test1x1Grid() {
-        assertEquals(1, up.uniquePaths(1, 1));
+        assertEquals(BigInteger.ONE, up.uniquePaths(1, 1));
     }
 
-    // Overflows
-    // @Test
-    // void test100x100Grid() {
-    // assertEquals(Integer.MAX_VALUE, up.uniquePaths(100, 100));
-    // }
+    @Test
+    void test100x100Grid() {
+        assertEquals(new BigInteger(
+                "22750883079422934966181954039568885395604168260154104734000"),
+                up.uniquePaths(100, 100));
+    }
 
     @Test
     void testPreConditionViolation() {
@@ -50,7 +51,7 @@ class UniquePathsTest {
 
     @Test
     void testPostCondition() {
-        assertTrue(up.uniquePaths(1, 6) > 0);
+        assertTrue(up.uniquePaths(1, 6).compareTo(BigInteger.ZERO) > 0);
     }
 
     @Property
@@ -65,6 +66,6 @@ class UniquePathsTest {
 
     @Provide
     Arbitrary<Integer> gridSizes() {
-        return Arbitraries.integers().between(1, 17);
+        return Arbitraries.integers().between(1, 100);
     }
 }

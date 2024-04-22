@@ -2,39 +2,39 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running zest.UniquePathsTest
-[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s - in zest.UniquePathsTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s - in zest.UniquePathsTest
 [INFO] Running zest.UniquePathsTest
-timestamp = 2024-04-21T15:08:14.849429, UniquePathsTest:testSymmetry = 
+timestamp = 2024-04-22T14:35:49.597176, UniquePathsTest:testSymmetry = 
                               |-----------------------jqwik-----------------------
-tries = 289                   | # of calls to property
-checks = 289                  | # of not rejected calls
-generation = EXHAUSTIVE       | parameters are exhaustively generated
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
 after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
 when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 0          | # of all combined edge cases
-edge-cases#tried = 0          | # of edge cases tried in current run
-seed = 5976699319602957550    | random seed to reproduce generated values
+edge-cases#total = 16         | # of all combined edge cases
+edge-cases#tried = 16         | # of edge cases tried in current run
+seed = 2071435596575031119    | random seed to reproduce generated values
 
 
-timestamp = 2024-04-21T15:08:14.863885, UniquePathsTest:testConsistency = 
+timestamp = 2024-04-22T14:35:49.694517, UniquePathsTest:testConsistency = 
                               |-----------------------jqwik-----------------------
-tries = 289                   | # of calls to property
-checks = 289                  | # of not rejected calls
-generation = EXHAUSTIVE       | parameters are exhaustively generated
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
 after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
 when-fixed-seed = ALLOW       | fixing the random seed is allowed
 edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 0          | # of all combined edge cases
-edge-cases#tried = 0          | # of edge cases tried in current run
-seed = -5519688257532076877   | random seed to reproduce generated values
+edge-cases#total = 16         | # of all combined edge cases
+edge-cases#tried = 16         | # of edge cases tried in current run
+seed = 198712107072308292     | random seed to reproduce generated values
 
 
-[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.127 s - in zest.UniquePathsTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.336 s - in zest.UniquePathsTest
 [INFO] 
 [INFO] Results:
 [INFO] 
-[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
 [INFO] 
 [INFO] 
 [INFO] --- jacoco-maven-plugin:0.8.10:report (report) @ unique-paths-grid ---
@@ -43,6 +43,6 @@ seed = -5519688257532076877   | random seed to reproduce generated values
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.123 s
-[INFO] Finished at: 2024-04-21T15:08:14+02:00
+[INFO] Total time:  1.347 s
+[INFO] Finished at: 2024-04-22T14:35:49+02:00
 [INFO] ------------------------------------------------------------------------
