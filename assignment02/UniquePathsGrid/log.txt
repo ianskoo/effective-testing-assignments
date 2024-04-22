@@ -38,11 +38,3 @@ seed = 198712107072308292     | random seed to reproduce generated values
 [INFO] 
 [INFO] 
 [INFO] --- jacoco-maven-plugin:0.8.10:report (report) @ unique-paths-grid ---
-[INFO] Loading execution data file /Users/naseemhassan/Desktop/EST_assignments/effective-testing-assignments/assignment02/UniquePathsGrid/target/jacoco.exec
-[INFO] Analyzed bundle 'unique-paths-grid' with 1 classes
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.347 s
-[INFO] Finished at: 2024-04-22T14:35:49+02:00
-[INFO] ------------------------------------------------------------------------
