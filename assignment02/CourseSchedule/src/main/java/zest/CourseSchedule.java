@@ -6,6 +6,16 @@ import java.util.List;
 public class CourseSchedule {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
 
+        //check prerequisites
+        assert numCourses > 0 : "Number of courses must be greater than 0";
+        for (int[] prerequisite : prerequisites) {
+            assert prerequisite.length == 2 : "prerequisite length must be 2";
+            assert prerequisite[0] != prerequisite[1] : "A course can't have itself as prerequisite";
+            for (int req : prerequisite) {
+                assert req >= 0 && req < numCourses : "can't have invalid course numbers";
+            }
+        }
+
 
         // Create a graph from prerequisites
         List<List<Integer>> graph = new ArrayList<>();
