@@ -116,6 +116,8 @@ The valid example in `validInputTest()` tests the post-conditions in one scenari
 
 The property of MergeKSortedLists could be: If the input adheres to the contract, return a single ascendingly sorted linked list, resulting from a merge of the input linked lists. The property test is implemented using Jqwik in `validInputValidOutputTest()`.
 
+After solving a problem related to our jqwik provider function sometimes behaving erratically (creating an array of the wrong size), the property test itself ran successfully for 1000 iterations without any errors, as documented in the [log](./log.txt).
+
 
 ## LLM prompts
 
