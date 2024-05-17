@@ -1,0 +1,11 @@
+# 03 Messages
+
+We first need to refactor MessageProcessor so we can use dependency injection. This allows us to pass a mock MessageService into the MessageProcessor rather than having MessageProcessor create its own instance of MessageService.
+## A
+To test if the appropriate subroutine is called as many times as it should we first created a new test file. The testProcessMessagesNumberOfInvocations test verifies that the sendMessage method of MessageService is called the correct amount of times with the expected parameters when processMessages is executed. We do this by initializing mocks using MockitoAnnotations.openMocks(this). We then create a MessageProcessor instance with the mocked MessageService. We create a list of Message objects with a predefined sender, receiver and content. Next we process the list of messages and finally use Mockitos verify method and times to check if sendMessage is called the correct number of times.
+## B
+The testProcessMessagesContentOfInvocationsWithArgumentCaptor test ensures that the content of the messages passed to sendMessage is correct by capturing the sender, receiver, and content arguments. First we again create a list of Message Objects. Next we execute the method to be tested, capture the arguments passed to sendMessage and finally receive the captured arguments and assert their correctness.
+## C
+To increase the observability of the MessageProcessor class we need to modify the MessageService to keep track of sent messages. We achieve this by adding sent messages to a list and adding a getter method to the class. The testProcessMessagesContentOfInvocationsWithIncreasedObservability test uses these changes to verify whether the content of the message is as expected.
+## D
+The advantage of using ArgumentCaptor is it allows us to capture and inspect arguments passed to mocked methods without modifying the actual implementation. When increasing observability one has to modify production code which might not always be desirable or possible. This approach also adds extra methods which might clutter classes with testing-related code. The disadvantage of using ArgumentCaptor is that it is more complex to set up and less intuitive than using increased observability. 
