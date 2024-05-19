@@ -1,3 +1,5 @@
+package zest;
+
 public class EmailNotificationService implements EventListener {
     @Override
     public void onOrderPlaced(Order order) {

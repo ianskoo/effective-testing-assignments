@@ -1,3 +1,5 @@
+package zest;
+
 public class InventoryManager implements EventListener {
     @Override
     public void onOrderPlaced(Order order) {

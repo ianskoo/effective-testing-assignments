@@ -1,3 +1,5 @@
+package zest;
+
 public class Order {
     private String orderId;
     private double amount;
