@@ -1,3 +1,5 @@
+package zest;
+
 public class StreamingDetails {
     private String movieId;
     private String streamToken;

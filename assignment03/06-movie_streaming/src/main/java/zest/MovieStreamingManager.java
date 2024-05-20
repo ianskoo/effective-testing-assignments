@@ -1,4 +1,12 @@
+package zest;
+
 public class MovieStreamingManager {
+    /**
+     * The MovieStreamingManager class manages operations for an online movie-streaming platform. 
+     * It interacts with a distributed file system for storing and retrieving movie metadata and 
+     * streaming tokens (`FileStreamService`). The system also integrates a local caching system 
+     * to optimize metadata retrieval (`CacheService`).
+     */
     private FileStreamService fileStreamService;
     private CacheService cacheService;
 
@@ -12,7 +20,10 @@ public class MovieStreamingManager {
     public StreamingDetails streamMovie(String movieId) {
         StreamingDetails details = cacheService.getDetails(movieId);
         if (details == null) {
+            
             MovieMetadata metadata = fileStreamService.retrieveMovie(movieId);
+            if (metadata == null) return null;
+
             String streamToken = fileStreamService.generateToken(movieId);  // Assume there's a method to generate a streaming token
             details = new StreamingDetails(movieId, streamToken, metadata);
             cacheService.cacheDetails(movieId, details);
