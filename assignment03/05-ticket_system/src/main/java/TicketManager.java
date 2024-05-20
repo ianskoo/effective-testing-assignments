@@ -1,12 +1,11 @@
-package support;
-
 // TicketManager class to handle ticket creation and interaction with services
 public class TicketManager {
     private NotificationService notificationService;
     private LogService logService;
     private TicketRepository ticketRepository;
 
-    public TicketManager(NotificationService notificationService, LogService logService, TicketRepository ticketRepository) {
+    public TicketManager(NotificationService notificationService, LogService logService,
+            TicketRepository ticketRepository) {
         this.notificationService = notificationService;
         this.logService = logService;
         this.ticketRepository = ticketRepository;
@@ -14,16 +13,22 @@ public class TicketManager {
 
     public void createTicket(Ticket ticket) {
         // Log the ticket creation
-        logService.logTicketCreation(ticket);
-
+        try {
+            logService.logTicketCreation(ticket);
+        } catch (Exception e) {
+            System.err.println("Failed to log ticket creation: " + e.getMessage());
+        }
         // Notify the customer
-        notificationService.notifyCustomer(ticket.getCustomerEmail(), 
-            "Thank you for your request. Your support ticket has been created and will be processed shortly.");
-
+        try {
+            notificationService.notifyCustomer(ticket.getCustomerEmail(),
+                    "Thank you for your request. Your support ticket has been created and will be processed shortly.");
+        } catch (Exception e) {
+            System.err.println("Failed to notify customer: " + e.getMessage());
+        }
         // Save the ticket to the database
         saveTicket(ticket);
     }
-    
+
     // Method to save ticket to a database
     private void saveTicket(Ticket ticket) {
         ticketRepository.save(ticket);
