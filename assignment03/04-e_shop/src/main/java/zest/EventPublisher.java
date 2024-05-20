@@ -10,9 +10,16 @@ public class EventPublisher {
         listeners.add(listener);
     }
 
-    public void publishOrderToAllListeners(Order order) {
+    public boolean publishOrderToAllListeners(Order order) {
+        boolean wereOrdersCorrectlyPublished = true;
+
         for (EventListener listener : listeners) {
-            listener.onOrderPlaced(order);
+            Order resOrder = listener.onOrderPlaced(order);
+            if (resOrder == null || order.getAmount() != resOrder.getAmount() || order.getOrderId() != resOrder.getOrderId()) {
+                wereOrdersCorrectlyPublished = false;
+            };
         }
+        // We know that the Order was correctly published
+        return wereOrdersCorrectlyPublished; 
     }
 }

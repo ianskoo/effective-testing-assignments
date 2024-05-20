@@ -1,0 +1,141 @@
+%TESTC  0 v2
+%TSTTREE2,zest.EventPublisherTest,true,4,false,1,EventPublisherTest,,[engine:junit-jupiter]/[class:zest.EventPublisherTest]
+%TSTTREE3,onOrderPlacedContentTest(zest.EventPublisherTest),true,0,false,2,onOrderPlacedContentTest(Order[]\, int),[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedContentTest(%5BLzest.Order;\, int)]
+%TSTTREE4,onOrderPlacedTimesCalledObservabilityTest(zest.EventPublisherTest),true,0,false,2,onOrderPlacedTimesCalledObservabilityTest(Order[]\, int),[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedTimesCalledObservabilityTest(%5BLzest.Order;\, int)]
+%TSTTREE5,onOrderPlacedContentObservabilityTest(zest.EventPublisherTest),true,0,false,2,onOrderPlacedContentObservabilityTest(Order[]\, int),[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedContentObservabilityTest(%5BLzest.Order;\, int)]
+%TSTTREE6,onOrderPlacedTimesCalledTest(zest.EventPublisherTest),true,0,false,2,onOrderPlacedTimesCalledTest(Order[]\, int),[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedTimesCalledTest(%5BLzest.Order;\, int)]
+%TSTTREE7,onOrderPlacedContentTest(zest.EventPublisherTest),false,1,true,3,[1] [zest.Order@291b4bf5\, zest.Order@2d2ffcb7\, zest.Order@762ef0ea]\, 3,[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedContentTest(%5BLzest.Order;\, int)]/[test-template-invocation:#1]
+%TESTS  7,onOrderPlacedContentTest(zest.EventPublisherTest)
+
+%FAILED 7,@AssumptionFailure: onOrderPlacedContentTest(zest.EventPublisherTest)
+%TRACES 
+org.opentest4j.TestAbortedException: Assumption failed: assumption is not true
+        at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
+        at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
+        at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:66)
+        at zest.EventPublisherTest.onOrderPlacedContentTest(EventPublisherTest.java:69)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+        at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+        at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+        at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+        at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:274)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+        at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+        at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+        at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+        at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+        at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+        at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+        at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:274)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+        at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+        at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+        at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+        at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+        at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+        at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+        at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:274)
+        at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+        at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+        at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+        at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+        at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+        at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+
+%TRACEE 
+%TESTE  7,onOrderPlacedContentTest(zest.EventPublisherTest)
+
+%TSTTREE8,onOrderPlacedContentTest(zest.EventPublisherTest),false,1,true,3,[2] []\, 0,[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedContentTest(%5BLzest.Order;\, int)]/[test-template-invocation:#2]
+%TESTS  8,onOrderPlacedContentTest(zest.EventPublisherTest)
+
+%TESTE  8,onOrderPlacedContentTest(zest.EventPublisherTest)
+
+%TSTTREE9,onOrderPlacedContentTest(zest.EventPublisherTest),false,1,true,3,[3] [zest.Order@21c64522]\, 1,[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedContentTest(%5BLzest.Order;\, int)]/[test-template-invocation:#3]
+%TESTS  9,onOrderPlacedContentTest(zest.EventPublisherTest)
+
+%TESTE  9,onOrderPlacedContentTest(zest.EventPublisherTest)
+
+%TSTTREE10,onOrderPlacedContentTest(zest.EventPublisherTest),false,1,true,3,[4] [zest.Order@182f1e9a]\, 1,[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedContentTest(%5BLzest.Order;\, int)]/[test-template-invocation:#4]
+%TESTS  10,onOrderPlacedContentTest(zest.EventPublisherTest)
+
+%TESTE  10,onOrderPlacedContentTest(zest.EventPublisherTest)
+
+%TSTTREE11,onOrderPlacedTimesCalledObservabilityTest(zest.EventPublisherTest),false,1,true,4,[1] [zest.Order@69f63d95\, zest.Order@9cd25ff\, zest.Order@27e0f2f5]\, 3,[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedTimesCalledObservabilityTest(%5BLzest.Order;\, int)]/[test-template-invocation:#1]
+%TESTS  11,onOrderPlacedTimesCalledObservabilityTest(zest.EventPublisherTest)
+
+%TESTE  11,onOrderPlacedTimesCalledObservabilityTest(zest.EventPublisherTest)
+
+%TSTTREE12,onOrderPlacedTimesCalledObservabilityTest(zest.EventPublisherTest),false,1,true,4,[2] []\, 0,[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedTimesCalledObservabilityTest(%5BLzest.Order;\, int)]/[test-template-invocation:#2]
+%TESTS  12,onOrderPlacedTimesCalledObservabilityTest(zest.EventPublisherTest)
+
+%TESTE  12,onOrderPlacedTimesCalledObservabilityTest(zest.EventPublisherTest)
+
+%TSTTREE13,onOrderPlacedTimesCalledObservabilityTest(zest.EventPublisherTest),false,1,true,4,[3] [zest.Order@5aabbb29]\, 1,[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedTimesCalledObservabilityTest(%5BLzest.Order;\, int)]/[test-template-invocation:#3]
+%TESTS  13,onOrderPlacedTimesCalledObservabilityTest(zest.EventPublisherTest)
+
+%TESTE  13,onOrderPlacedTimesCalledObservabilityTest(zest.EventPublisherTest)
+
+%TSTTREE14,onOrderPlacedTimesCalledObservabilityTest(zest.EventPublisherTest),false,1,true,4,[4] [zest.Order@1ac85b0c]\, 1,[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedTimesCalledObservabilityTest(%5BLzest.Order;\, int)]/[test-template-invocation:#4]
+%TESTS  14,onOrderPlacedTimesCalledObservabilityTest(zest.EventPublisherTest)
+
+%TESTE  14,onOrderPlacedTimesCalledObservabilityTest(zest.EventPublisherTest)
+
+%TSTTREE15,onOrderPlacedContentObservabilityTest(zest.EventPublisherTest),false,1,true,5,[1] [zest.Order@3aa3193a\, zest.Order@1ee4730\, zest.Order@59a67c3a]\, 3,[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedContentObservabilityTest(%5BLzest.Order;\, int)]/[test-template-invocation:#1]
+%TESTS  15,onOrderPlacedContentObservabilityTest(zest.EventPublisherTest)
+
+%TESTE  15,onOrderPlacedContentObservabilityTest(zest.EventPublisherTest)
+
+%TSTTREE16,onOrderPlacedContentObservabilityTest(zest.EventPublisherTest),false,1,true,5,[2] []\, 0,[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedContentObservabilityTest(%5BLzest.Order;\, int)]/[test-template-invocation:#2]
+%TESTS  16,onOrderPlacedContentObservabilityTest(zest.EventPublisherTest)
+
+%TESTE  16,onOrderPlacedContentObservabilityTest(zest.EventPublisherTest)
+
+%TSTTREE17,onOrderPlacedContentObservabilityTest(zest.EventPublisherTest),false,1,true,5,[3] [zest.Order@23a9ba52]\, 1,[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedContentObservabilityTest(%5BLzest.Order;\, int)]/[test-template-invocation:#3]
+%TESTS  17,onOrderPlacedContentObservabilityTest(zest.EventPublisherTest)
+
+%TESTE  17,onOrderPlacedContentObservabilityTest(zest.EventPublisherTest)
+
+%TSTTREE18,onOrderPlacedContentObservabilityTest(zest.EventPublisherTest),false,1,true,5,[4] [zest.Order@70ab80e3]\, 1,[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedContentObservabilityTest(%5BLzest.Order;\, int)]/[test-template-invocation:#4]
+%TESTS  18,onOrderPlacedContentObservabilityTest(zest.EventPublisherTest)
+
+%TESTE  18,onOrderPlacedContentObservabilityTest(zest.EventPublisherTest)
+
+%TSTTREE19,onOrderPlacedTimesCalledTest(zest.EventPublisherTest),false,1,true,6,[1] [zest.Order@67427b69\, zest.Order@78461bc4\, zest.Order@544630b7]\, 3,[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedTimesCalledTest(%5BLzest.Order;\, int)]/[test-template-invocation:#1]
+%TESTS  19,onOrderPlacedTimesCalledTest(zest.EventPublisherTest)
+
+%TESTE  19,onOrderPlacedTimesCalledTest(zest.EventPublisherTest)
+
+%TSTTREE20,onOrderPlacedTimesCalledTest(zest.EventPublisherTest),false,1,true,6,[2] []\, 0,[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedTimesCalledTest(%5BLzest.Order;\, int)]/[test-template-invocation:#2]
+%TESTS  20,onOrderPlacedTimesCalledTest(zest.EventPublisherTest)
+
+%TESTE  20,onOrderPlacedTimesCalledTest(zest.EventPublisherTest)
+
+%TSTTREE21,onOrderPlacedTimesCalledTest(zest.EventPublisherTest),false,1,true,6,[3] [zest.Order@73511076]\, 1,[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedTimesCalledTest(%5BLzest.Order;\, int)]/[test-template-invocation:#3]
+%TESTS  21,onOrderPlacedTimesCalledTest(zest.EventPublisherTest)
+
+%TESTE  21,onOrderPlacedTimesCalledTest(zest.EventPublisherTest)
+
+%TSTTREE22,onOrderPlacedTimesCalledTest(zest.EventPublisherTest),false,1,true,6,[4] [zest.Order@532721fd]\, 1,[Lzest.Order;\, int,[engine:junit-jupiter]/[class:zest.EventPublisherTest]/[test-template:onOrderPlacedTimesCalledTest(%5BLzest.Order;\, int)]/[test-template-invocation:#4]
+%TESTS  22,onOrderPlacedTimesCalledTest(zest.EventPublisherTest)
+
+%TESTE  22,onOrderPlacedTimesCalledTest(zest.EventPublisherTest)
+
+%RUNTIME322
