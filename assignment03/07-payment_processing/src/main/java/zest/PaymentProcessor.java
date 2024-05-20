@@ -1,5 +1,7 @@
 package zest;
 
+import org.h2.mvstore.tx.Transaction;
+
 public class PaymentProcessor {
     private EventPublisher eventPublisher;
     private TransactionService transactionService;
@@ -11,10 +13,12 @@ public class PaymentProcessor {
         this.fraudDetectionService = fraudService;
     }
 
-    public void processPayment(Transaction transaction) {
+    public boolean processPayment(Transaction transaction) {
         if (fraudDetectionService.evaluateTransaction(transaction)) {
             transactionService.processTransaction(transaction);
             eventPublisher.publishTransactionComplete(transaction);
+            return true;
         }
+        return false;
     }
 }

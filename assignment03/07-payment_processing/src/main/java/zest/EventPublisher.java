@@ -1,5 +1,7 @@
 package zest;
 
+import org.h2.mvstore.tx.Transaction;
+
 import java.util.ArrayList;
 import java.util.List;
 
